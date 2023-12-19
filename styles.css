@@ -1,0 +1,424 @@
+html, body {
+    background-color: #eee8d5;
+    font-family: 'Schoolbell', monospace, monospace;
+    color: #40414e;
+    text-shadow: 1px 0px 10px;
+    background-image: url(./assets/corkboard-texture-2.jpg);
+    background-size: 35%;
+    height: 100%;
+    margin: 0px;
+    cursor: url(./cursor.png), auto;
+    padding: 0px;
+    width: 100%;
+}
+
+.overlay {
+    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 27%, rgba(255, 255, 255, 0.0) 100%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100000000;
+    pointer-events: none;
+    top: 0px;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: #40414e;
+    transition: 200ms;
+}
+
+.section {
+    background-color: #fff;
+    background-image: 
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 512px;
+    padding: 2px 2px 2px 0px;
+    margin: 20px 0px;
+    border-image: url(paper.jpg);
+    border-radius: 5px;
+    z-index: 100000;
+}
+
+.sectioncontainer {
+    z-index: 100000;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    padding: 0.4rem;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #333333;
+    text-shadow: 1px 1px 6px;
+    transition: 200ms;
+    border-radius: 5px;
+    background-image: url(./assets/paper.jpg);
+}
+
+.btn:hover {
+    text-decoration: none;
+    padding: 0.6rem;
+    box-shadow: 0 4px 4px 0 rgba(220, 50, 47, 0.2), 0 2px 5px 0 rgba(255, 0, 0, 0.19);
+    transition: 200ms;
+}
+
+.btn:active {
+    text-decoration: none;
+    padding: 0.6rem;
+    box-shadow: 0 0 20px 0 rgba(220, 50, 47, 0.2), 0 0 20px 0 rgba(255, 0, 0, 0.19);
+    transition: 200ms;
+}
+
+a:hover {
+    transition: 200ms;
+    cursor: url(./assets/cursor.png), auto;
+    font-size: larger;
+    color: #333333;
+}
+
+#b0 {
+    transform: rotate(-8deg);
+}
+
+#b1 {
+    transform: rotate(-2deg);
+}
+
+#b2 {
+    transform: rotate(1deg);
+}
+
+#b3 {
+    transform: rotate(-3deg);
+}
+
+#b4 {
+    transform: rotate(-1deg);
+}
+
+.photo {
+    padding-top: 20px;
+    justify-content: center;
+    vertical-align: center;
+    -webkit-user-drag: element;
+    background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(224, 224, 224) 100%);
+    font-size: 18pt;
+    position: absolute;
+    z-index: 100;
+    transition: 200ms;
+    line-height: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    scale: 70%;
+    user-select: none;
+    border-radius: 10px;
+}
+
+.photo:hover {
+    transition: 200ms;
+    scale: 80%;
+}
+
+#p1 {
+    width: 280px;
+    height: 380px;
+    transform: rotate(10deg);
+    left: 10%;
+}
+
+#p1:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 125%;
+}
+
+#p2 {
+    width: 280px;
+    height: 380px;
+    transform: rotate(-5deg);
+    right: 20%;
+}
+
+#p2:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 125%;
+}
+
+#p3 {
+    width: 340px;
+    height: 290px;
+    transform: rotate(-6deg);
+    right: 40%;
+    top: 40%;
+}
+
+#p3:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 125%;
+}
+
+#p4 {
+    width: 340px;
+    height: 300px;
+    transform: rotate(3deg);
+    left: 5%;
+    bottom: 20%;
+}
+
+#p4:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 125%;
+}
+
+
+.photocontainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#card {
+    font-size: 20pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 50px 30px;
+    transform: rotate(30deg);
+    right: 10%;
+    bottom: 25%;
+    scale: 70%;
+    border-radius: 10px;
+}
+
+#card:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 115%;
+}
+
+#note {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-35deg);
+    left: 220px;
+    width: 250px;
+    bottom: 170px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    
+}
+
+#note:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    transition: 200ms;
+    left: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+#note2 {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-60deg);
+    left: 220px;
+    width: 250px;
+    bottom: 170px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    
+}
+
+#note2:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    transition: 200ms;
+    left: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+#noteleft {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-40deg);
+    left: -130px;
+    width: 250px;
+    bottom: -100px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+#noteleft:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    transition: 200ms;
+    left: -290px;
+}
+
+#note1 {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-10deg);
+    left: -130px;
+    width: 250px;
+    bottom: -100px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+#note1:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    transition: 200ms;
+    left: -290px;
+}
+
+#pencil {
+    font-size: 15pt;
+    background-color: #8ce4ff00;
+    transform: rotate(8deg);
+    right: 10%;
+    bottom: 30%;
+    width: 28px;
+    height: 620px;
+    background-image: url(./assets/classic-pencil-realistic-illustration-by-Vexels.svg);
+    background-size: 700px 700px;
+    background-position: center;
+    box-shadow: inset -2px 2px 10px 4px #00000025;
+    box-shadow: 2px 2px 10px 4px #00000025;
+}
+
+#pencil:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 175%;
+}
+
+root {
+    --paper-shadow: #000000;
+}
+
+.pin {
+    --pin-color: #d02627;
+    --pin-dark: #9e0608;
+    --pin-light: #fc7e7d;
+
+    position: absolute;
+    left: 20px;
+    width: 60px;
+    height: 50px;
+}
+
+.shadow {
+    position: absolute;
+    top: 18px;
+    left: -8px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: radial-gradient(var(--paper-shadow), 20%, rgba(201, 191, 141, 2));
+}
+
+.metal {
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(to right, #808080, 40%, #eae8e8, 50%, #808080);
+    border-radius: 0 0 30% 30%;
+    transform: rotate(50deg);
+    transform-origin: bottom left;
+    top: 20px;
+    left: 5px;
+    border-bottom: 1px solid #808080;
+}
+
+.bottom-circle {
+    position: absolute;
+    right: 15px;
+    width: 35px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--pin-color);
+    background: radial-gradient(
+        circle at bottom right,
+        var(--pin-light),
+        25%,
+        var(--pin-dark),
+        90%,
+        var(--pin-color)
+);
+}
+
+/* Barrel */
+.bottom-circle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 20px;
+    height: 30px;
+    transform: rotate(55deg);
+    transform-origin: 100% 100%;
+    border-radius: 0 0 40% 40%;
+    background: linear-gradient(
+        to right,
+        var(--pin-dark),
+        30%,
+        var(--pin-color),
+        90%,
+        var(--pin-light)
+    );
+}
+
+/* Top circle */
+.bottom-circle::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at right,
+        var(--pin-light),
+        30%,
+        var(--pin-color),
+        var(--pin-dark) 80%
+    );
+}

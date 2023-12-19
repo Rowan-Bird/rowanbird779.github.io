@@ -1,0 +1,260 @@
+<script>
+    let el = document.getElementByClass('btn');
+    el.style.setProperty('--rand', Math.random());
+</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <title>Rowan's Website</title>
+        <style>
+            html, body {
+                background-color: #eee8d5;
+                font-family: 'Schoolbell', monospace, monospace;
+                color: #40414e;
+                text-shadow: 1px 0px 10px;
+                background-image: url(./assets/Wood026_1K-JPG_Color.jpg);
+                overflow: hidden;
+                height: 100%;
+                cursor: url(./assets/cursor.png), auto;
+                margin: 0px;
+                padding: 0px;
+                width: 100%;
+            }
+
+            .overlay {
+                background-image: radial-gradient(circle at top left, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 27%, rgba(255,255,255,0) 100%);
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 100000000;
+                pointer-events: none;
+            }
+
+            li {
+                display: inline-block;
+            }
+
+            a {
+                text-decoration: none;
+                color: #40414e;
+                transition: 200ms;
+            }
+
+            .section {
+                background-color: #fff;
+                background-image: 
+                linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                linear-gradient(#eee .1em, transparent .1em);
+                background-size: 100% 1.2em;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                max-width: 768px;
+                padding: 2px 2px 2px 0px;
+                margin: 20px 0px;
+                border-image: url(paper.jpg);
+                border-radius: 5px;
+                z-index: 100000;
+            }
+
+            .sectioncontainer {
+                z-index: 100000;
+            }
+
+            .btn {
+                text-decoration: none;
+                color: black;
+                padding: 0.4rem;
+                margin-bottom: 15px;
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+                border: 1px solid #333333;
+                border-radius: 5px;
+                text-shadow: 1px 1px 6px;
+                transition: 200ms;
+                background-image: url(./assets/Paper003_1K-JPG_Color.jpg);
+                background-size: 60%;
+            }
+
+            .btn:hover {
+                text-decoration: none;
+                padding: 0.6rem;
+                box-shadow: 0 4px 4px 0 rgba(220, 50, 47, 0.2), 0 2px 5px 0 rgba(255, 0, 0, 0.19);
+                transition: 200ms;
+                cursor: url(./assets/cursor.png), auto;
+            }
+
+            .btn:active {
+                text-decoration: none;
+                padding: 0.6rem;
+                box-shadow: 0 0 20px 0 rgba(220, 50, 47, 0.2), 0 0 20px 0 rgba(255, 0, 0, 0.19);
+                transition: 200ms;
+            }
+
+            a:hover {
+                transition: 200ms;
+                font-size: larger;
+                cursor: url(./assets/cursor.png), auto;
+            }
+
+            #b1 {
+                transform: rotate(-2deg);
+            }
+
+            #b2 {
+                transform: rotate(1deg);
+            }
+
+            #b3 {
+                transform: rotate(-3deg);
+            }
+
+            #b4 {
+                transform: rotate(-1deg);
+            }
+
+            .photo {
+                padding-top: 20px;
+                justify-content: center;
+                vertical-align: center;
+                -webkit-user-drag: element;
+                background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(211, 211, 211) 100%);
+                font-size: 18pt;
+                position: absolute;
+                z-index: 100;
+                transition: 200ms;
+                line-height: 0;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+            }
+
+            .photo:hover {
+                transition: 200ms;
+                scale: 115%;
+            }
+
+            #p1 {
+                width: 280px;
+                height: 240px;
+                transform: rotate(5deg);
+                left: 10%;
+                top: 20%;
+            }
+
+            #p1:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+            #p2 {
+                width: 280px;
+                height: 380px;
+                transform: rotate(-5deg);
+                right: 20%;
+            }
+
+            #p2:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+            #p3 {
+                width: 280px;
+                height: 240px;
+                transform: rotate(-2deg);
+                right: 50%;
+                bottom: 60%;
+            }
+
+            #p3:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+            #p4 {
+                width: 280px;
+                height: 380px;
+                transform: rotate(3deg);
+                right: 40%;
+                bottom: 40%;
+            }
+
+            #p4:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+
+            .photocontainer {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            #card {
+                font-size: 15pt;
+                background-image: linear-gradient(180deg, rgba(140,228,255,1) 0%, rgba(59,192,233,1) 100%);
+                line-height: 2rem;
+                padding: 20px 10px;
+                transform: rotate(2deg);
+                right: 20%;
+                bottom: 30%;
+            }
+
+            #card:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="overlay">
+        </div>
+        <center>
+            <div class="sectioncontainer">
+                <div class="section" style="transform: rotate(-0.6deg);">
+                        <h1 style="transform: rotate(2deg);">Rowan's Website</h1>
+                            <li class="btn" id="b2"><a href="collection.html">Collections</a></li>
+                            <li class="btn" id="b3"><a href="about.html">About</a></li>
+                            <li class="btn" id="b4"><a href="projects.html">Projects</a></li>
+                </div> 
+
+            </div>
+
+                <div class="photocontainer">
+                    <div class="photo" id="p1">
+                        <img src="./image/IMG_2014.jpg" width="240">
+                        <p style="transform: rotate(0.7deg); font-size: 18pt;">a photo of some trees</p>
+                    </div>
+
+                    <div class="photo" draggable="true" id="p2">
+                        <img src="./image/IMG_1985.jpg" width="240">
+                        <p style="transform: rotate(1deg); font-size: 18pt;">My Thinkpad Z61m (2006)</p>
+                    </div>
+
+                    <div class="photo" id="p3">
+                        <img src="./image/80A28AAE-A0FE-4AFF-B944-3F526F31D56A.jpg" width="240">
+                        <p style="transform: rotate(-1deg); font-size: 18pt;">An ice-covered pole</p>
+                    </div>
+
+                    <div class="photo" id="p4">
+                        <img src="./image/IMG_0997.jpg" width="240">
+                        <p style="transform: rotate(-1deg); font-size: 13pt; line-height: 1rem;">Didn't think I'd see a VHS tape here</p>
+                    </div>
+
+                    <div class="photo" id="card">
+                        <p style="transform: rotate(-0.7deg);">Welcome to my website, <br>where I showcase things I take pictures of.</p>
+                    </div>
+
+                    </div>
+                </div>
+        </center>
+    </body>
+</html>

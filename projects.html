@@ -1,0 +1,417 @@
+<script>
+    let el = document.getElementByClass('btn');
+    el.style.setProperty('--rand', Math.random());
+</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Permanent+Marker&family=Schoolbell&display=swap" rel="stylesheet"> 
+    <title>Rowan's Website</title>
+        <style>
+
+
+            html, body {
+                font-family: 'Schoolbell', monospace, monospace;
+                color: #40414e;
+                cursor: url(./assets/cursor.png), auto;
+                text-shadow: 1px 0px 10px;
+                overflow: hidden;
+                height: 100%;
+                margin: 0px;
+                padding: 0px;
+                width: 100%;
+            }
+
+            html {
+                cursor: url(./assets/cursor.png), auto;background-image: 
+  linear-gradient(
+    /* change degreee or colors*/
+    0deg,
+    SlateBlue,RoyalBlue 
+  );
+
+  body {background-image:
+	linear-gradient(
+    /* change degreee to get different patterns*/
+		0deg,
+		transparent 0%, transparent 24px, 
+		rgba(255, 255, 255, 0.2)24px, 
+		rgba(255, 255, 255, 0.2)25px, 
+		transparent 25px, transparent 49px, 
+		rgba(255, 255, 255, 0.1)49px, 
+		rgba(255, 255, 255, 0.1)50px, 
+		transparent 50px, transparent 74px, 
+		rgba(255, 255, 255, 0.1)74px, 
+		rgba(255, 255, 255, 0.1)75px,
+		transparent 75px, transparent 99px, 
+		rgba(255, 255, 255, 0.1)99px, 
+		rgba(255, 255, 255, 0.1)100px), 
+	linear-gradient(
+    /* change degreee to get different patterns*/
+     -90deg, 
+		transparent 0%, transparent 24px, 
+		rgba(255, 255, 255, 0.2)24px, 
+		rgba(255, 255, 255, 0.2)25px, 
+		transparent 25px, transparent 49px, 
+		rgba(255, 255, 255, 0.1)49px, 
+		rgba(255, 255, 255, 0.1)50px, 
+		transparent 50px, transparent 74px, 
+		rgba(255, 255, 255, 0.1)74px, 
+		rgba(255, 255, 255, 0.1)75px,
+		transparent 75px, transparent 99px, 
+		rgba(255, 255, 255, 0.1)99px, 
+		rgba(255, 255, 255, 0.1)100px);
+    background-size: 100px 100px;
+}}
+
+            .overlay {
+                background-image: radial-gradient(circle at top left, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 27%, rgba(255,255,255,0) 100%);
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 100000000;
+                cursor: url(./assets/cursor.png), auto;
+                pointer-events: none;
+            }
+
+            li {
+                display: inline-block;
+            }
+
+            a {
+                text-decoration: none;
+                color: #40414e;
+                transition: 200ms;
+            }
+
+            .section {
+                background-color: #fff;
+                background-image: 
+                linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                linear-gradient(#eee .1em, transparent .1em);
+                background-size: 100% 1.2em;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                aspect-ratio: 9 / 11;
+                padding: 10px 10px 10px 0px;
+                border-radius: 5px 25px 25px 5px;
+                top: -7.5px;
+                z-index: 1000;
+                margin: auto;
+                white-space: normal;
+            }
+
+            .sectionright {
+                background-color: #fff;
+                position: relative;
+                background-image: 
+                linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                linear-gradient(#eee .1em, transparent .1em);
+                background-size: 100% 1.2em;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                aspect-ratio: 9 / 11;
+                padding: 10px 10px 10px 0px;
+                border-radius: 25px 5px 5px 25px;
+                top: -7.5px;
+                z-index: 1000;
+                margin: auto;
+            }
+
+            .binder {
+                background-image: linear-gradient(180deg, rgba(38,38,38,1) 0%, rgba(24,24,24,1) 100%);
+                position: relative;
+                width: inherit;
+                height: 70%;
+                aspect-ratio: 9 / 11;
+                box-shadow: 1px 5px 15px 10px rgba(0,0,0,0.5);
+                border-radius: 5px 45px 45px 5px;
+                padding: 25px;
+                padding-right: 25px;
+                padding-bottom: 32px;
+                margin-right: auto;
+                margin-bottom: auto;
+                margin-top: auto;
+            }
+
+            .binderring {
+                z-index: 10000000;
+                position: fixed;
+                bottom: 6%;
+                top: 0px; 
+                right: 0px;
+                left: 0px;
+                filter: drop-shadow(2px 2px 8px linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,0.6460784997592788) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0) 100%));
+                margin: auto;
+                pointer-events: none;
+            }
+
+            .open {
+                background-image: linear-gradient(180deg, rgba(38,38,38,1) 0%, rgba(24,24,24,1) 100%);
+                position: relative;
+                width: inherit;
+                z-index: 10;
+                height: 70%;
+                aspect-ratio: 9 / 11;
+                box-shadow: 1px 5px 15px 10px rgba(0,0,0,0.5);
+                border-radius: 45px 5px 5px 45px;
+                flex-flow: column wrap;
+                padding: 25px;
+                padding-top: 30px;
+                padding-left: 25px;
+                margin-left: auto;
+                margin-bottom: auto;
+                margin-top: auto;
+            }
+
+            @media (max-width: 1100px) {
+                .open {
+                    display: none;
+                }
+                .binderring {
+                    display: none;
+                }
+
+                .binder {
+                    top: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                    right: 0px;
+                    margin: auto;
+                    transform: rotate(-2deg);
+                    border-radius: 45px;
+                }
+                
+                .section {
+                    border-radius: 25px;
+                }
+            }   
+
+            .sectioncontainer {
+                z-index: 100000;
+                display: flex;
+                cursor: url(./assets/cursor.png), auto;
+                transform: rotate(2deg);
+                height: 100%;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+
+            .spacer {
+                width: 0px;
+            }
+
+            .btn {
+                text-decoration: none;
+                color: black;
+                padding: 0.4rem;
+                margin-bottom: 15px;
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+                border: 1px solid #333333;
+                border-radius: 5px;
+                text-shadow: 1px 1px 6px;
+                transition: 200ms;
+                background-image: url(./assets/Paper003_1K-JPG_Color.jpg);
+                background-size: 60%;
+            }
+
+            .btn:hover {
+                text-decoration: none;
+                padding: 0.4rem 0.6rem;
+                box-shadow: 0 4px 4px 0 rgba(220, 50, 47, 0.2), 0 2px 5px 0 rgba(255, 0, 0, 0.19);
+                transition: 200ms;
+            }
+
+            .btn:active {
+                text-decoration: none;
+                box-shadow: 0 0 20px 0 rgba(220, 50, 47, 0.2), 0 0 20px 0 rgba(255, 0, 0, 0.19);
+                transition: 200ms;
+            }
+
+            a:hover {
+                transition: 200ms;
+                cursor: url(./assets/cursor.png), auto;
+                color: #b30000;
+            }
+
+            #b1 {
+                transform: rotate(-2deg);
+            }
+
+            #b2 {
+                transform: rotate(1deg);
+            }
+
+            #b3 {
+                transform: rotate(-3deg);
+            }
+
+            #b4 {
+                transform: rotate(-1deg);
+            }
+
+            .photo {
+                padding-top: 20px;
+                justify-content: center;
+                vertical-align: center;
+                -webkit-user-drag: element;
+                background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(211, 211, 211) 100%);
+                font-size: 18pt;
+                position: absolute;
+                z-index: 100;
+                transition: 200ms;
+                line-height: 0;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+            }
+
+            .photo:hover {
+                transition: 200ms;
+                scale: 115%;
+            }
+
+            #p1 {
+                width: 280px;
+                height: 240px;
+                transform: rotate(5deg);
+                left: 10%;
+                top: 20%;
+            }
+
+            #p1:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+            #p2 {
+                width: 280px;
+                height: 380px;
+                transform: rotate(-5deg);
+                right: 20%;
+            }
+
+            #p2:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+            #p3 {
+                width: 280px;
+                height: 240px;
+                transform: rotate(-2deg);
+                right: 50%;
+                bottom: 60%;
+            }
+
+            #p3:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+            #p4 {
+                width: 280px;
+                height: 380px;
+                transform: rotate(3deg);
+                right: 40%;
+                bottom: 40%;
+            }
+
+            #p4:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+
+            .photocontainer {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            #card {
+                font-size: 15pt;
+                background-image: linear-gradient(180deg, rgba(140,228,255,1) 0%, rgba(59,192,233,1) 100%);
+                line-height: 2rem;
+                padding: 20px 10px;
+                transform: rotate(2deg);
+                right: 20%;
+                bottom: 30%;
+            }
+
+            #card:active {
+                transform: rotate(0deg);
+                z-index: 100000;
+                scale: 175%;
+            }
+
+            .tab {
+                background-color: black;
+                width: 50px;
+                height: 100px;
+                position: fixed;
+                left: -50px;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                backdrop-filter: blur(4px);
+                border: 2px solid rgba(255, 255, 255, 0.26);
+                border-right: 0px;
+            }
+
+            .tab {
+                width: 50px;
+                height: 100px;
+                background: black;
+            }
+
+            .text, a {
+                line-height: 1.33;
+                padding-top: 8px;
+                white-space: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="overlay">
+        </div>
+            <div class="sectioncontainer">
+                
+                <img src="./binder.svg" height="75%" class="binderring">
+                <div class="open">
+                    <div class="sectionright">
+
+                    </div>
+                </div>
+                <div class="binder">
+                        <div class="section">
+                            <center>
+                            <h1 style="transform: rotate(2deg);">My Projects</h1>
+                            <li class="btn" id="b4"><a href="index.html">Home</a></li>
+                            <li class="btn" id="b2"><a href="collection.html">Collections</a></li>
+                            <li class="btn" id="b3"><a href="about.html">About</a></li>
+                            </center>
+
+                            <div class="text">
+                                <p style="margin-left: 90px;"><b><i><u><a href="https://rowan-bird.github.io/rowancre/SDK.html">Windows 2004</a></u></i></b></p>
+                                    <p href="#" style="margin-left: 90px;">
+                                        This was my attempt to create an operating environment in HTML. It was my first time with this idea so naturally it sucks.
+                                    </p>
+                                <p style="margin-left: 90px;"><b><i><u><a href="#">Placeholder Project</a></u></i></b></p>
+                                <p style="margin-left: 90px;">
+                                    This is a placeholder project to make the book less empty
+                                </p>
+                            </div>
+                        </div> 
+                </div>
+            </div>
+
+                <div class="photocontainer">
+
+
+                </div>
+    </body>
+</html>
