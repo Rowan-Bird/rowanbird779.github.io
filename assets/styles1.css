@@ -1,0 +1,581 @@
+html, body {
+    background-color: #eee8d5;
+    font-family: 'Schoolbell', monospace, monospace;
+    color: #40414e;
+    text-shadow: 1px 0px 10px;
+    background-image: url(/assets/corkboard-texture-2.jpg);
+    background-size: 35%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    cursor: url(./cursor.png), auto;
+    width: 100%;
+}
+
+.overlay {
+    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 27%, rgba(255, 255, 255, 0.0) 100%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100000000;
+    pointer-events: none;
+    top: 0px;
+}
+
+.shine {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.178) 0%, rgba(255,255,255,0) 100%);
+    width: 100%;
+    height: 100%;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: #40414e;
+    transition: 200ms;
+}
+
+.section {
+    background-color: #fff;
+    background-image: 
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 512px;
+    padding: 2px 2px 2px 0px;
+    margin: 20px 0px;
+    border-radius: 5px;
+    z-index: 100000;
+}
+
+.sectioncontainer {
+    z-index: 100000;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    padding: 0.4rem;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #333333;
+    text-shadow: 1px 1px 6px;
+    transition: 200ms;
+    border-radius: 5px;
+    background-image: url(./Paper003_1K-JPG_Color.jpg);
+    background-size: 60%;
+}
+
+.btn:hover {
+    text-decoration: none;
+    padding: 0.6rem;
+    box-shadow: 0 4px 4px 0 rgba(220, 50, 47, 0.2), 0 2px 5px 0 rgba(255, 0, 0, 0.19);
+    transition: 200ms;
+}
+
+.btn:active {
+    text-decoration: none;
+    padding: 0.6rem;
+    box-shadow: 0 0 20px 0 rgba(220, 50, 47, 0.2), 0 0 20px 0 rgba(255, 0, 0, 0.19);
+    transition: 200ms;
+}
+
+a:hover {
+    transition: 200ms;
+    font-size: larger;
+    cursor: url(./assets/cursor.png), auto;
+    color: #333333;
+}
+
+#b0 {
+    transform: rotate(-8deg);
+}
+
+#b1 {
+    transform: rotate(-2deg);
+}
+
+#b2 {
+    transform: rotate(1deg);
+}
+
+#b3 {
+    transform: rotate(-3deg);
+}
+
+#b4 {
+    transform: rotate(-1deg);
+}
+
+.photo {
+    padding-top: 20px;
+    justify-content: center;
+    vertical-align: center;
+    -webkit-user-drag: element;
+    font-size: 18pt;
+    position: absolute;
+    z-index: 100;
+    transition: 200ms;
+    scale: 70%;
+    user-select: none;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transition: 200ms;
+    scale: 80%;
+}
+
+#p1 {
+    transform: rotate(-8deg);
+    transition: 200ms;
+    left: 5%;
+    top: 5%;
+    background-image: linear-gradient(180deg, rgba(140,228,255,1) 0%, rgba(59,192,233,1) 100%);
+}
+
+#p1:active {
+    transform: rotate(0deg);
+    transition: 200ms;
+    z-index: 100000;
+    scale: 125%;
+}
+
+#p2 {   
+    transform: rotate(4deg);
+    transition: 200ms;
+    right: 20%;
+    top: calc(100px + 10%)
+}
+
+#p2:active {
+    transform: rotate(0deg);
+    transition: 200ms;
+    z-index: 100000;
+    scale: 125%;
+}
+
+#p3 {
+    transform: rotate(15deg);
+    transition: 200ms;
+    right: 40%;
+    background: linear-gradient(180deg, rgb(255, 0, 255) 0%, rgb(197, 70, 235) 100%);
+    top: 40%;
+}
+
+#p3:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 125%;
+}
+
+#p4 {
+    transform: rotate(-4deg);
+    left: 10%;
+    bottom: 10%;
+    background: linear-gradient(180deg, rgb(67, 255, 183) 0%, rgb(61, 206, 150) 100%);
+}
+
+#p4:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 125%;
+}
+
+#p5 {
+    transform: rotate(8deg);
+    right: 10%;
+    bottom: 12%;
+    background: linear-gradient(180deg, rgb(255, 116, 116) 0%, rgb(211, 121, 141) 100%);
+}
+
+#p5:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 125%;
+}
+
+.photocontainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    font-size: 20pt;
+    background: linear-gradient(180deg, rgb(255, 198, 66) 0%, rgb(255, 179, 0) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    line-height: 2rem;
+    padding: 50px 30px;
+    transform: rotate(30deg);
+    scale: 70%;
+    user-select: none;
+    transition: 200ms;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.card::before {
+    z-index: 1;
+}
+
+.card:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    transition: 200ms;
+    scale: 115%;
+}
+
+#note {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-35deg);
+    left: 220px;
+    width: 250px;
+    bottom: 170px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    
+}
+
+.photo:active #note {
+    z-index: 100000;
+    transition: 200ms;
+    transform: rotate(5deg);
+    left: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+#note2 {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-60deg);
+    left: 220px;
+    width: 250px;
+    bottom: 170px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    
+}
+
+.photo:active #note2 {
+    transform: rotate(5deg);
+    z-index: 100000;
+    transition: 200ms;
+    left: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+#noteleft {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-40deg);
+    left: -130px;
+    width: 250px;
+    bottom: -100px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+.photo:active #noteleft {
+    transform: rotate(5deg);
+    z-index: 100000;
+    transition: 200ms;
+    left: -290px;
+}
+
+#note1 {
+    font-size: 14pt;
+    background: linear-gradient(180deg, rgba(255,177,0,1) 0%, rgb(235, 185, 70) 100%);
+    line-height: 2rem;
+    padding: 20px 10px;
+    padding-left: 0px;
+    padding-right: 20px;
+    transform: rotate(-10deg);
+    left: -130px;
+    width: 250px;
+    bottom: -100px;
+    position: fixed;
+    transition: 200ms;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+
+.photo:active #note1 {
+    transform: rotate(5deg);
+    z-index: 100000;
+    transition: 200ms;
+    left: -290px;
+}
+
+#pencil {
+    font-size: 15pt;
+    background-color: #8ce4ff00;
+    transform: rotate(8deg);
+    right: 10%;
+    bottom: 30%;
+    width: 28px;
+    height: 620px;
+    background-image: url(./assets/classic-pencil-realistic-illustration-by-Vexels.svg);
+    background-size: 700px 700px;
+    background-position: center;
+    box-shadow: inset -2px 2px 10px 4px #00000025;
+    box-shadow: 2px 2px 10px 4px #00000025;
+}
+
+#pencil:active {
+    transform: rotate(0deg);
+    z-index: 100000;
+    scale: 175%;
+}
+
+root {
+    --paper-shadow: #000000;
+}
+
+.pin {
+    --pin-color: #d02627;
+    --pin-dark: #9e0608;
+    --pin-light: #fc7e7d;
+
+    position: absolute;
+    left: 20px;
+    width: 60px;
+    height: 50px;
+}
+
+.shadow {
+    position: absolute;
+    top: 18px;
+    left: -8px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: radial-gradient(var(--paper-shadow), 20%, rgba(201, 191, 141, 2));
+}
+
+.metal {
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(to right, #808080, 40%, #eae8e8, 50%, #808080);
+    border-radius: 0 0 30% 30%;
+    transform: rotate(50deg);
+    transform-origin: bottom left;
+    top: 20px;
+    left: 5px;
+    border-bottom: 1px solid #808080;
+}
+
+.bottom-circle {
+    position: absolute;
+    right: 15px;
+    width: 35px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--pin-color);
+    background: radial-gradient(
+        circle at bottom right,
+        var(--pin-light),
+        25%,
+        var(--pin-dark),
+        90%,
+        var(--pin-color)
+);
+}
+
+/* Barrel */
+.bottom-circle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 20px;
+    height: 30px;
+    transform: rotate(55deg);
+    transform-origin: 100% 100%;
+    border-radius: 0 0 40% 40%;
+    background: linear-gradient(
+        to right,
+        var(--pin-dark),
+        30%,
+        var(--pin-color),
+        90%,
+        var(--pin-light)
+    );
+}
+
+/* Top circle */
+.bottom-circle::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at right,
+        var(--pin-light),
+        30%,
+        var(--pin-color),
+        var(--pin-dark) 80%
+    );
+}
+
+:root {
+    --pink: #ecb2ba;
+    --pink-dark: #c6939a;
+    --tape-gray: #dbd8be;
+    --tape-edge-gray: #b7b49d;
+    --transparent: rgba(255, 255, 255, 0);
+  }
+  
+  body {
+    background: #ebf4e9;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .pink {
+    --paper-color: var(--pink);
+    --paper-dark: var(--pink-dark);
+    --shadow-size: 1px;
+    --transparent: rgba(236, 178, 186, 0);
+  }
+  
+  .blue {
+    --paper-color: #d5e0f9;
+    --paper-dark: #c2d0ea;
+    --shadow-size: 3px;
+    --transparent: rgba(213, 224, 249, 0);
+  }
+  
+  .paper {
+    position: relative;
+    background: linear-gradient(
+        to bottom right,
+        var(--paper-dark),
+        20%,
+        var(--transparent)
+      ),
+      var(--paper-color);
+    min-width: 250px;
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Caveat", cursive;
+    font-size: 2rem;
+    box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  .paper::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        var(--transparent),
+        50%,
+        var(--paper-dark),
+        51%,
+        var(--transparent)
+      ),
+      linear-gradient(
+        to right,
+        var(--transparent),
+        50%,
+        var(--paper-dark),
+        51%,
+        var(--transparent)
+      );
+  }
+  
+  .tape-section {
+    position: absolute;
+    width: 100%;
+    right: 0px;
+  }
+  
+  .top-tape {
+    position: absolute;
+    height: 4vmin;
+    top: -5px;
+    width: 110%;
+    background-color: var(--tape-gray);
+    border-right: 1px dotted var(--tape-edge-gray);
+    border-left: 1px dotted var(--tape-edge-gray);
+    opacity: 0.5;
+  }
+  
+  .tape-section:first-of-type {
+    top: 0;
+  }
+  
+  .tape-section:last-of-type {
+    bottom: 0;
+  }
+  
+  .tape-section::before,
+  .tape-section::after {
+    content: "";
+    width: 10vmin;
+    height: 4vmin;
+    position: absolute;
+    background-color: var(--tape-gray);
+    opacity: 0.5;
+    border-right: 1px dotted var(--tape-edge-gray);
+    border-left: 1px dotted var(--tape-edge-gray);
+  }
+  
+  .tape-section:last-of-type::after {
+    transform: rotate(-45deg);
+    right: -4vmin;
+    top: -3vmin;
+  }
+  
+  .tape-section:first-of-type::before {
+    transform: rotate(-45deg);
+    left: -4vmin;
+  }
+  
+  .tape-section:first-of-type::after {
+    transform: rotate(45deg);
+    right: -4vmin;
+    top: 0;
+  }
+  
+  .tape-section:last-of-type::before {
+    transform: rotate(45deg);
+    left: -4vmin;
+    bottom: 0;
+  }
