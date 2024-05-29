@@ -36,20 +36,14 @@ a {
 
 .section {
     background-color: #fff;
-    background-image: 
-    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-    linear-gradient(#eee .1em, transparent .1em);
+    background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .1em, transparent .1em);
     background-size: 100% 1.2em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 512px;
     padding: 2px 2px 2px 0px;
     margin: 20px 0px;
     border-radius: 5px;
-    z-index: 100000;
-}
-
-.sectioncontainer {
-    z-index: 100000;
+     
 }
 
 .btn {
@@ -128,6 +122,10 @@ a:hover {
     scale: 80%;
 }
 
+.photo:active {
+    z-index: 100000000000000;
+}
+
 #card:hover {
     transition: 200ms;
     scale: 80%;
@@ -143,7 +141,7 @@ a:hover {
 
 #p1:active {
     transform: rotate(0deg);
-    z-index: 100000;
+     
     scale: 125%;
 }
 
@@ -156,7 +154,7 @@ a:hover {
 
 #p2:active {
     transform: rotate(0deg);
-    z-index: 100000;
+     
     scale: 125%;
 }
 
@@ -170,7 +168,7 @@ a:hover {
 
 #p3:active {
     transform: rotate(0deg);
-    z-index: 100000;
+     
     scale: 125%;
 }
 
@@ -184,10 +182,37 @@ a:hover {
 
 #p4:active {
     transform: rotate(0deg);
-    z-index: 100000;
+     
     scale: 125%;
 }
 
+#p5 {
+    width: 340px;
+    height: 460px;
+    transform: rotate(2deg);
+    left: 20%;
+    bottom: 50%;
+}
+
+#p5:active {
+    transform: rotate(0deg);
+     
+    scale: 125%;
+}
+
+#p6 {
+    width: 340px;
+    height: 300px;
+    transform: rotate(10deg);
+    left: 15%;
+    bottom: 2%;
+}
+
+#p6:active {
+    transform: rotate(0deg);
+     
+    scale: 125%;
+}
 
 .photocontainer {
     position: absolute;
@@ -209,7 +234,7 @@ a:hover {
 
 #card:active {
     transform: rotate(0deg);
-    z-index: 100000;
+     
     scale: 115%;
 }
 
@@ -232,7 +257,7 @@ a:hover {
 }
 
 .photo:active #note {
-    z-index: 100000;
+     
     transition: 200ms;
     transform: rotate(5deg);
     left: 300px;
@@ -259,7 +284,7 @@ a:hover {
 
 .photo:active #note2 {
     transform: rotate(5deg);
-    z-index: 100000;
+     
     transition: 200ms;
     left: 300px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 px 20px 0 rgba(0, 0, 0, 0.19);   
@@ -284,7 +309,7 @@ a:hover {
 
 .photo:active #noteleft {
     transform: rotate(5deg);
-    z-index: 100000;
+     
     transition: 200ms;
     left: -290px;
 }
@@ -308,7 +333,7 @@ a:hover {
 
 .photo:active #note1 {
     transform: rotate(5deg);
-    z-index: 100000;
+     
     transition: 200ms;
     left: -290px;
 }
@@ -330,7 +355,7 @@ a:hover {
 
 #pencil:active {
     transform: rotate(0deg);
-    z-index: 100000;
+     
     scale: 175%;
 }
 
