@@ -11,6 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
     <title>Rowan's Website</title>
         <style>
+            /* works on aspect ratios wider than 4:3, but 3:2 or 16:10 is recommended */
+            @keyframes fadein {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadeout {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
             html, body {
                 background-color: #eee8d5;
                 font-family: 'Schoolbell', monospace, monospace;
@@ -116,6 +135,7 @@
 
             .photo {
                 padding-top: 20px;
+                user-select: none;
                 justify-content: center;
                 vertical-align: center;
                 -webkit-user-drag: element;
@@ -133,6 +153,10 @@
                 transition: 200ms;
                 scale: 115%;
             }
+            
+            .photo:active {
+                z-index: 1000000000;
+            }
 
             #p1 {
                 width: 280px;
@@ -144,8 +168,7 @@
 
             #p1:active {
                 transform: rotate(0deg);
-                z-index: 100000;
-                scale: 175%;
+                scale: 200%;
             }
 
             #p2 {
@@ -157,8 +180,7 @@
 
             #p2:active {
                 transform: rotate(0deg);
-                z-index: 100000;
-                scale: 175%;
+                scale: 200%;
             }
 
             #p3 {
@@ -171,8 +193,7 @@
 
             #p3:active {
                 transform: rotate(0deg);
-                z-index: 100000;
-                scale: 175%;
+                scale: 200%;
             }
 
             #p4 {
@@ -185,10 +206,47 @@
 
             #p4:active {
                 transform: rotate(0deg);
-                z-index: 100000;
-                scale: 175%;
+                scale: 200%;
             }
 
+            #p5 {
+                width: 280px;
+                height: 240px;
+                transform: rotate(-6deg);
+                right: 65%;
+                bottom: 50%;
+            }
+
+
+
+            #p5:active {
+                transform: rotate(0deg);
+                scale: 200%;
+            }
+
+            /* This exists so I can show metadata or whatever instead of the title when the photo is clicked.*/
+
+            .photo:active p{
+                opacity: 0;
+                transition: 200ms;
+            }
+
+            p {
+                transition: 200ms;
+                opacity: 1;
+            }
+
+            .photo:active .p1{
+                opacity: 1;
+                transition: 200ms;
+            }
+
+            .p1 {
+                transition: 200ms;
+                opacity: 0;
+            }
+
+            /* Now that I think about it, I should probably comment this stuff */
 
             .photocontainer {
                 position: absolute;
@@ -214,6 +272,7 @@
 
         </style>
     </head>
+    <!-- you should let me hug your soft little -->
     <body>
         <div class="overlay">
         </div>
@@ -232,21 +291,31 @@
                     <div class="photo" id="p1">
                         <img src="./image/IMG_2014.jpg" width="240">
                         <p style="transform: rotate(0.7deg); font-size: 18pt;">a photo of some trees</p>
+                        <p class="p1" style="transform: rotate(-1deg); font-size: 8pt; position: fixed; top: 180px; padding: 20px; line-height: 1rem;">A photo of some trees I took during the winter, probably November. Apple iPhone 5S</p>
                     </div>
 
                     <div class="photo" draggable="true" id="p2">
-                        <img src="./image/IMG_1985.jpg" width="240">
+                        <img src="./image/PXL_20240528_202247973.jpg" width="240">
                         <p style="transform: rotate(1deg); font-size: 18pt;">My Thinkpad Z61m (2006)</p>
+                        <p class="p1" style="transform: rotate(-1deg); font-size: 8pt; position: fixed; top: 320px; padding: 20px; line-height: 1rem;">My ThinkPad Z61m, running Windows Vista, around some trees. Google Pixel 7a</p>
                     </div>
 
                     <div class="photo" id="p3">
                         <img src="./image/80A28AAE-A0FE-4AFF-B944-3F526F31D56A.jpg" width="240">
                         <p style="transform: rotate(-1deg); font-size: 18pt;">An ice-covered pole</p>
+                        <p class="p1" style="transform: rotate(-1deg); font-size: 8pt; position: fixed; top: 180px; padding: 20px; line-height: 1rem;">A pole covered in ice flakes. I haven't seen this before or since. Apple iPhone 5S</p>
                     </div>
 
                     <div class="photo" id="p4">
                         <img src="./image/IMG_0997.jpg" width="240">
                         <p style="transform: rotate(-1deg); font-size: 13pt; line-height: 1rem;">Didn't think I'd see a VHS tape here</p>
+                        <p class="p1" style="transform: rotate(-1deg); font-size: 8pt; position: fixed; top: 320px; padding: 20px; line-height: 1rem;">An unexpectedly placed VHS tape in a classroom. <br>Apple iPhone 5S</p>
+                    </div>
+
+                    <div class="photo" id="p5">
+                        <img src="./image/PXL_20240517_113955344.jpg" width="240">
+                        <p style="transform: rotate(-1deg); font-size: 18pt;">It's much greener now</p>
+                        <p class="p1" style="transform: rotate(-1deg); font-size: 8pt; position: fixed; top: 180px; padding: 20px; line-height: 1rem;">Newer version of "a photo of some trees". <br>Google Pixel 7a</p>
                     </div>
 
                     <div class="photo" id="card">
